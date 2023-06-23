@@ -1,7 +1,12 @@
 import React from 'react'
+import Layout from '../layout/Layout'
 
 function App() {
-  return <h1>02-Hackathon-Team-2 </h1>
+  return (
+    <Layout>
+      <h1>hello</h1>
+    </Layout >
+  )
 }
 
 export default App
