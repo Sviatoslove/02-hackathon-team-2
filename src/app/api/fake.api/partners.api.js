@@ -10,11 +10,15 @@ const partners = [
     email: 'yaluvv@yandex.ru',
     telegram: 'https://t.me/yalvv',
     github: ' https://github.com/yaluvv',
-    technologies: {
+    hardSkills: {
+      title: 'Hard Skills:',
       javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
       html: { name: 'HTML:', progress: randomInt(55, 80) },
       css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) },
+      redux: { name: 'Redux:', progress: randomInt(35, 55) }
+    },
+    softSkills: {
+      title: 'Soft Skills:',
       creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
       flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
       discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
@@ -38,11 +42,15 @@ const partners = [
     email: 'alexeywest024@list.ru',
     telegram: 'https://t.me/WeST_024',
     github: 'https://github.com/AlexeyKharitonov',
-    technologies: {
+    hardSkills: {
+      title: 'Hard Skills:',
       javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
       html: { name: 'HTML:', progress: randomInt(55, 80) },
       css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) },
+      redux: { name: 'Redux:', progress: randomInt(35, 55) }
+    },
+    softSkills: {
+      title: 'Soft Skills:',
       creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
       flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
       discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
@@ -67,11 +75,15 @@ const partners = [
     email: 'svyatpopov86@gmail.com',
     telegram: 'https://t.me/Vana_Svyat',
     github: 'https://github.com/Sviatoslove',
-    technologies: {
+    hardSkills: {
+      title: 'Hard Skills:',
       javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
       html: { name: 'HTML:', progress: randomInt(55, 80) },
       css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) },
+      redux: { name: 'Redux:', progress: randomInt(35, 55) }
+    },
+    softSkills: {
+      title: 'Soft Skills:',
       creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
       flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
       discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
@@ -97,11 +109,15 @@ const partners = [
     email: 'maximrogozin@icloud.com',
     telegram: 'https://t.me/Autmaxcapital',
     github: 'https://github.com/Maximrogozin',
-    technologies: {
+    hardSkills: {
+      title: 'Hard Skills:',
       javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
       html: { name: 'HTML:', progress: randomInt(55, 80) },
       css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) },
+      redux: { name: 'Redux:', progress: randomInt(35, 55) }
+    },
+    softSkills: {
+      title: 'Soft Skills:',
       creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
       flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
       discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
@@ -117,9 +133,6 @@ const partners = [
     favorites: false
   }
 ]
-//if (!localStorage.getItem('partners')) {
-//  localStorage.setItem('partners', JSON.stringify(partners))
-//}
 
 const fetchAll = () =>
   new Promise((resolve) => {
