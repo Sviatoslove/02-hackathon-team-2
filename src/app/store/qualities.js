@@ -43,14 +43,16 @@ export const selectQualitiesLoadingStatus = () => (state) =>
   state.qualities.isLoadng
 export const selectQualitiesByIds = (qualitiesIds) =>
   createSelector(selectQualitiesList, (qualities) => {
+    const res = []
     for (const qualId of qualitiesIds) {
       for (const qual of qualities) {
         if (qualId === qual._id) {
-          return qual
+          res.push(qual)
+          break
         }
-        break
       }
     }
+    return res
   })
 
 export default qualitiesReducer
