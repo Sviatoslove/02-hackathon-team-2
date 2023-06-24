@@ -6,7 +6,7 @@ const greetingsSlice = createSlice({
   initialState: {
     entities: null,
     error: null,
-    isLoading: false
+    isLoading: true
   },
   reducers: {
     greetingsRequested: (state) => {
