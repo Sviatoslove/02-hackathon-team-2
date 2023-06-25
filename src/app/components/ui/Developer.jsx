@@ -20,6 +20,7 @@ const Developer = (developer) => {
   } = developer
   const qualities = useSelector(selectQualitiesByIds(qualitiesIds))
   const getClassName = () => (favorites ? '-fill' : '')
+
   const updateFavorites = (id) => {
     dispatch(favoritesAddAndDelete(id))
   }

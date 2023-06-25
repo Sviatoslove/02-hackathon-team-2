@@ -1,56 +1,12 @@
-// import { createSlice } from '@reduxjs/toolkit'
-// import partnersService from '../services/partners.service'
-
-// const partnersSlice = createSlice({
-//   name: 'partners',
-//   initialState: {
-//     entities: null,
-//     error: null,
-//     isLoading: false
-//   },
-//   reducers: {
-//     partnersRequested: (state) => {
-//       state.isLoading = true
-//     },
-//     partnersReceved: (state, action) => {
-//       state.entities = action.payload
-//       state.isLoading = false
-//     },
-//     partnersRequestedFailed: (state, action) => {
-//       state.error = action.payload
-//       state.isLoading = false
-//     }
-//   }
-// })
-
-// const { actions, reducer: partnersReducer } = partnersSlice
-// const { partnersRequested, partnersReceved, partnersRequestedFailed } = actions
-
-// export const loadPartnersList = () => async (dispatch) => {
-//   dispatch(partnersRequested())
-//   try {
-//     const data = await partnersService.get()
-//     dispatch(partnersReceved(data))
-//     return data
-//   } catch (error) {
-//     dispatch(partnersRequestedFailed(error.message))
-//   }
-// }
-
-// export const selectPartnersList = () => (state) => state.partners.entities
-// export const selectPartnersLoadingStatus = () => (state) =>
-//   state.partners.isLoading
-// export const selectPartnerById = (id) => (state) =>
-//   state.partners.entities.find((p) => p._id === id)
-
-// export default partnersReducer
 import { createSlice } from '@reduxjs/toolkit'
 import partnersService from '../services/partners.service'
+import localStorageService from '../services/localStorage.service'
 
 const partnersSlice = createSlice({
   name: 'partners',
   initialState: {
     entities: null,
+    favorites: [],
     error: null,
     isLoading: true
   },
@@ -66,7 +22,7 @@ const partnersSlice = createSlice({
       state.error = action.payload
       state.isLoading = false
     },
-    updateFavorites: (state, action) => {
+    updateFavoritesPartners: (state, action) => {
       const elIdx = state.entities.findIndex(
         (el) => el._id === action.payload.id
       )
@@ -74,6 +30,11 @@ const partnersSlice = createSlice({
         ...state.entities[elIdx],
         favorites: !state.entities[elIdx].favorites
       }
+    },
+    updateFavoritesStore: (state) => {
+      state.favorites = state.entities.filter((el) => el.favorites)
+      const arrIds = state.favorites.map((el) => el._id)
+      localStorageService.set(arrIds)
     }
   }
 })
@@ -83,7 +44,8 @@ const {
   partnersRequested,
   partnersReceved,
   partnersRequestedFailed,
-  updateFavorites
+  updateFavoritesPartners,
+  updateFavoritesStore
 } = actions
 
 export const loadPartnersList = () => async (dispatch) => {
@@ -91,14 +53,29 @@ export const loadPartnersList = () => async (dispatch) => {
   try {
     const data = await partnersService.get()
     dispatch(partnersReceved(data))
+    const favoritesIds = localStorageService.get()
+    if (favoritesIds) {
+      favoritesIds.forEach((id) => {
+        dispatch(updateFavoritesPartners({ id }))
+      })
+    }
     return data
   } catch (error) {
     dispatch(partnersRequestedFailed(error.message))
   }
 }
 
+export const selectFavoritesPartnersIds = () => (state) => {
+  const arrFavorites = state.partners.favorites
+  if (arrFavorites.length) {
+    return arrFavorites.map((p) => p._id)
+  }
+}
+
 export const favoritesAddAndDelete = (id) => (dispatch) => {
-  dispatch(updateFavorites({ id }))
+  dispatch(updateFavoritesPartners({ id }))
+  dispatch(updateFavoritesStore())
+  selectFavoritesPartnersIds()
 }
 
 export const selectPartnersList = () => (state) => state.partners.entities
