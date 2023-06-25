@@ -5,24 +5,35 @@ import {
   loadGreetingsList,
   selectGreetingsLoadingStatus
 } from '../../../store/greetings '
-import Loading from '../../common/Loading'
+import Loading from '../../Common/Loading'
 import {
   loadPartnersList,
   selectPartnersLoadingStatus
 } from '../../../store/partners'
+import {
+  loadQualitiesList,
+  selectQualitiesLoadingStatus
+} from '../../../store/qualities'
 
 const AppLoader = ({ children }) => {
   const dispatch = useDispatch()
   const greetingsLoadingStatus = useSelector(selectGreetingsLoadingStatus())
   const partnersLoadingStatus = useSelector(selectPartnersLoadingStatus())
+  const qualitiesLoadingStatus = useSelector(selectQualitiesLoadingStatus())
 
   useEffect(() => {
     dispatch(loadGreetingsList())
     dispatch(loadPartnersList())
+    dispatch(loadQualitiesList())
   }, [])
 
-  if (!greetingsLoadingStatus && !partnersLoadingStatus) return children
-
+  if (
+    !greetingsLoadingStatus &&
+    !partnersLoadingStatus &&
+    !qualitiesLoadingStatus
+  ) {
+    return children
+  }
   return <Loading />
 }
 

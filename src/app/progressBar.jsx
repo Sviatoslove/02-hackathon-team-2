@@ -22,7 +22,7 @@ const ProgressBar = ({ data, title }) => {
               aria-label='Animated striped example"'
               style={{ width: `${i.progress}%` }}
             >
-              {/* {`${i.progress}%`} */}
+              {`${i.progress}%`}
             </div>
           </div>
         </div>

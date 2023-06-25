@@ -1,36 +1,28 @@
-import Favorites from '../layouts/Favorites'
-import Main from '../layouts/Main'
-import OurTeam from '../layouts/OurTeam'
-import PartnerPage from '../layouts/PartnerPage'
+import FavoritesPage from '../layouts/FavoritesPage'
+import MainPage from '../layouts/MainPage'
+import TeamPage from '../layouts/TeamPage'
 
 const routes = [
   {
-    path: '/',
     name: 'Главная страница',
-    display: true,
+    to: '/',
+    path: '/',
     exact: true,
-    component: Main
+    component: MainPage
   },
   {
-    path: '/ourTeam',
     name: 'Наша команда',
-    display: true,
+    to: '/ourTeam',
+    path: '/ourTeam/:id?/:name?',
     exact: false,
-    component: OurTeam
+    component: TeamPage
   },
   {
-    path: '/favorites',
     name: 'Избранные',
-    display: true,
+    to: '/favorites',
+    path: '/favorites',
     exact: false,
-    component: Favorites
-  },
-  {
-    path: '/ourTeam/:id',
-    name: 'Страница участника',
-    display: false,
-    exact: false,
-    component: PartnerPage
+    component: FavoritesPage
   }
 ]
 

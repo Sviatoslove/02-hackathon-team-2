@@ -1,45 +1,53 @@
-const qualities = {
-  smart: {
+const qualities = [
+  {
     _id: '67rdca3eeb7f6fgeed471198',
-    name: 'Умный',
+    content: 'Умный',
+    textColor: 'text-warning',
     color: 'primary'
   },
-  creative: {
+  {
     _id: '67rdca3eeb7f6fgeed471100',
-    name: 'Креативный',
+    content: 'Креативный',
+    textColor: 'text-danger-emphasis',
     color: 'secondary'
   },
-  greyhound: {
+  {
     _id: '67rdca3eeb7f6fgeed4711012',
-    name: 'Борзый',
+    content: 'Борзый',
+    textColor: 'text-light-emphasis',
     color: 'success'
   },
-  timlid: {
+  {
     _id: '67rdca3eeb7f6fgeed471101',
-    name: 'Тимлид',
+    content: 'Тимлид',
+    textColor: 'text-warning text-uppercase',
     color: 'danger'
   },
-  handsome: {
+  {
     _id: '67rdca3eeb7f6fgeed471102',
-    name: 'Красавчик',
+    content: 'Красавчик',
+    textColor: 'text-warning-emphasis',
     color: 'info'
   },
-  calm: {
+  {
     _id: '67rdca3eeb7f6fgeed471103',
-    name: 'Спокойный',
+    content: 'Спокойный',
+    textColor: 'text-light',
     color: 'dark'
   },
-  thoughtful: {
+  {
     _id: '67rdca3eeb7f6fgeed471104',
-    name: 'Вдумчивый',
+    content: 'Вдумчивый',
+    textColor: 'text-primary',
     color: 'warning'
   },
-  unwavering: {
+  {
     _id: '67rdca3eeb7f6fgeed471105',
-    name: 'Непоколебимый',
+    content: 'Непоколебимый',
+    textColor: 'text-dark',
     color: 'light'
   }
-}
+]
 
 const fetchAll = () =>
   new Promise((resolve) => {
