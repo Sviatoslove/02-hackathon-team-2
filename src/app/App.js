@@ -1,7 +1,8 @@
 import React from 'react'
+import UserPage from './userPage/userPage'
 
 function App() {
-  return <h1>02-Hackathon-Team-2 </h1>
+  return <UserPage />
 }
 
 export default App
