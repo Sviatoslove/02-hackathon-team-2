@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectGreetingsList } from '../store/greetings '
 import { selectPartnersList } from '../store/partners'
-import Developer from '../components/ui/Developer'
+import Developer from '../components/UI/Developer'
 import CardGreetings from '../components/Common/CardGreetings'
 
 const Main = () => {

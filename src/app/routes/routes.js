@@ -1,6 +1,7 @@
 import FavoritesPage from '../layouts/FavoritesPage'
 import MainPage from '../layouts/MainPage'
 import TeamPage from '../layouts/TeamPage'
+import Login from '../layouts/login'
 
 const routes = [
   {
@@ -23,6 +24,13 @@ const routes = [
     path: '/favorites',
     exact: false,
     component: FavoritesPage
+  },
+  {
+    name: 'Вход',
+    to: '/login',
+    path: '/login',
+    exact: false,
+    component: Login
   }
 ]
 

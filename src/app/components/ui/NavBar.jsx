@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import routes from '../../routes/routes'
-import LOGO from '../../../assets/logo.png'
+import { useUser } from '../../hooks/UserProvider'
+// import LOGO from '../../../assets/logo.png'
 
 const expandMenu = (routes) => {
   return routes.map((item, idx) => (
@@ -14,17 +15,26 @@ const expandMenu = (routes) => {
 }
 
 const NavBar = () => {
+  const { user } = useUser()
+  console.log(user)
+
   return (
     <nav className='navbar bg-primary' data-bs-theme='dark'>
       <div className='container-fluid'>
         <NavLink className='nav-link' to='/'>
-          <img src={LOGO} style={{ borderRadius: '50%', width: '50px' }} />
+          <img
+            src='/favicon-dev.png'
+            style={{ borderRadius: '50%', width: '50px' }}
+          />
         </NavLink>
         <ul className='nav'>{expandMenu(routes)}</ul>
-        <div className='d-flex'>
-          <NavLink className='nav-link p-2 text-light' to='/login'>
-            Login
-          </NavLink>
+        <div>
+          {user.loggedIn && <img src={user.avatar} alt='avatar' />}
+          {!user.loggedIn && (
+            <NavLink className='nav-link p-2 text-light' to='/login'>
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </nav>

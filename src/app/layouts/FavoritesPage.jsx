@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectPartnersList } from '../store/partners'
-import Developer from '../components/ui/Developer'
+import Developer from '../components/UI/Developer'
 
 const FavoritesPage = () => {
   const partners = useSelector(selectPartnersList())
