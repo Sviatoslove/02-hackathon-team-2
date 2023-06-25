@@ -1,24 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ProgressBar = ({ data }) => {
+const ProgressBar = ({ data, title }) => {
   return (
-    <div className='mt-5 '>
-      <h3 className='text-center'>Основные языки програмирования</h3>
+    <div className='p-3'>
+      <h3 className='text-center'>{title}</h3>
       {data.map((i) => (
-        <div key={i.id} className=''>
+        <div key={i.name} className='d-flex p-2'>
           <h4>{i.name}</h4>
-          <div className='progress'>
+          <div
+            className='progress w-50 mt-2 ml-auto'
+            role='progressbar'
+            aria-label='Animated striped example'
+            aria-valuenow='75'
+            aria-valuemin='0'
+            aria-valuemax='100'
+          >
             <div
-              className={`progress-bar ${i.color}`}
+              className={`progress-bar progress-bar-striped progress-bar-animated ${i.color}`}
               role='progressbar'
-              aria-label='Example with label'
-              style={{ width: `${i.progress}` }}
-              aria-valuenow='25'
-              aria-valuemin='0'
-              aria-valuemax='100'
+              aria-label='Animated striped example"'
+              style={{ width: `${i.progress}%` }}
             >
-              {i.progress}
+              {/* {`${i.progress}%`} */}
             </div>
           </div>
         </div>
@@ -27,7 +31,8 @@ const ProgressBar = ({ data }) => {
   )
 }
 ProgressBar.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  title: PropTypes.string
 }
 
 export default ProgressBar
