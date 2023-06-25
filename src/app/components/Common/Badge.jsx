@@ -3,12 +3,15 @@ import PropTypes from 'prop-types'
 
 const Badge = ({ color, content }) => {
   return (
-    <span
-      className={'text-wrap badge rounded-pill text-dark bg-' + color}
-      style={{ padding: '30px', maxWidth: '960px' }}
+    <div
+      className={'text-wrap fs-5 badge mt-4 opacity-50 text-dark bg-' + color}
+      style={{
+        padding: '25px',
+        maxWidth: '800px'
+      }}
     >
       {content}
-    </span>
+    </div>
   )
 }
 

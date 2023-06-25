@@ -1,46 +1,40 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { nanoid } from 'nanoid'
-import Badge from './Common/Badge'
-import Developer from './Developer'
-import styles from './Developer.module.css'
-
-const content = `Представляем вашему вниманию команду
-frontend-разработчиков из 83-ей группы: Святослава, 
-Максима, Алексея и Александра!`
-
-// временно!!
-const developers = [
-  { _id: nanoid(), name: 'Алексей', age: 28 },
-  { _id: nanoid(), name: 'Святослав', age: 'age' },
-  { _id: nanoid(), name: 'Максим', age: 30 },
-  { _id: nanoid(), name: 'Александр', age: 22 }
-]
+import React, { useEffect, useState } from 'react'
+// import Badge from './Common/Badge'
+import Header from './Common/Header'
+import Paragraph from './UI/Paragraph'
+// import { UsersInfo, content } from '../apiMy/UsersInfo'
+import Users from './UI/Users'
+import API from '../api'
 
 const MainPage = () => {
+  const [partners, setPartners] = useState([])
+  useEffect(() => {
+    API.partners.fetchAll().then((data1) => setPartners(data1))
+  }, [])
+  console.log(partners)
+
+  // const [data, setData] = useState([])
+  // useEffect(() => {
+  //   setData(UsersInfo)
+  // }, [])
+  // console.log(data)
+
   return (
     <>
-      <nav
-        className='navbar navbar-dark'
-        style={{ backgroundColor: '#0155AB' }}
-      >
-        <Link className='navbar-brand mx-4' to='/'>
-          Team of developers
-        </Link>
-      </nav>
+      <Header />
       <div className='container mt-4'>
-        {/* <div className='row'> */}
-        <div className='d-flex align-items-center flex-column'>
-          <h2>Наша команда разработчиков</h2>
-          <h3 className='mt-4 opacity-50'>
-            <Badge color={'warning'} content={content} />
-          </h3>
-        </div>
-        <div className={styles.gridContainer}>
-          {developers.map((developer) => (
-            <Developer key={developer._id} {...developer} />
-          ))}
-          {/* </div> */}
+        <div className='row mt-5'>
+          <div className='d-flex align-items-center flex-column '>
+            <Paragraph>Наша команда разработчиков Innovation Brigade</Paragraph>
+            {/* <Badge color={'warning'} content={content} /> */}
+          </div>
+          <Users developers={partners} />
+          {/* <div>
+            {developers.map((developer) => (
+              // <DeveloperPage key={developer._id} {...developer} />
+              <DeveloperPage key={developer._id} developer={developer} />
+            ))}
+          </div> */}
         </div>
       </div>
     </>
