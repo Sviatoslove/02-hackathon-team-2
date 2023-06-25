@@ -1,23 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Badge = ({ color, content }) => {
+const Badge = ({ color, content: name, textColor, circle }) => {
+  const getClassName = () => (circle ? ' rounded-pill ' : ' ')
   return (
-    <div
-      className={'text-wrap fs-5 badge mt-4 opacity-50 text-dark bg-' + color}
-      style={{
-        padding: '25px',
-        maxWidth: '800px'
-      }}
+    <span
+      className={
+        'text-wrap badge m-2 p-3 bg-' + color + getClassName() + textColor
+      }
     >
-      {content}
-    </div>
+      {name}
+    </span>
   )
+}
+
+Badge.defaultProps = {
+  circle: false
 }
 
 Badge.propTypes = {
   color: PropTypes.string,
-  content: PropTypes.string
+  textColor: PropTypes.string,
+  content: PropTypes.string,
+  circle: PropTypes.bool
 }
 
 export default Badge

@@ -1,5 +1,4 @@
-// import { randomInt } from '../../utils/randomNum'
-import { randomInt } from '../../../../src//utils/randomNum'
+import { randomInt } from '../../utils/randomNum'
 
 const partners = [
   {
@@ -11,21 +10,43 @@ const partners = [
     email: 'yaluvv@yandex.ru',
     telegram: 'https://t.me/yalvv',
     github: ' https://github.com/yaluvv',
-    hardSkills: {
-      title: 'Hard Skills:',
-      javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
-      html: { name: 'HTML:', progress: randomInt(55, 80) },
-      css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) }
-    },
-    softSkills: {
-      title: 'Soft Skills:',
-      creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
-      flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
-      discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
-      autonomy: { name: 'Самостоятельность:', progress: randomInt(60, 95) },
-      proactivity: { name: 'Проактивность:', progress: randomInt(50, 90) }
-    },
+    hardSkills: [
+      {
+        name: 'Java Script:',
+        progress: randomInt(25, 65),
+        color: 'bg-warning'
+      },
+      { name: 'HTML:', progress: randomInt(55, 80), color: 'bg-danger' },
+      { name: 'CSS:', progress: randomInt(60, 75), color: '' },
+      {
+        name: 'Redux:',
+        progress: randomInt(35, 55),
+        color: 'bg-info text-dark'
+      }
+    ],
+    softSkills: [
+      {
+        name: 'Креативность:',
+        progress: randomInt(20, 85),
+        color: 'bg-info'
+      },
+      { name: 'Гибкость:', progress: randomInt(30, 75), color: 'bg-warning' },
+      {
+        name: 'Коммуникативность:',
+        progress: randomInt(20, 90),
+        color: 'bg-primary'
+      },
+      {
+        name: 'Самостоятельность:',
+        progress: randomInt(60, 95),
+        color: 'bg-success'
+      },
+      {
+        name: 'Проактивность:',
+        progress: randomInt(50, 90),
+        color: 'bg-danger'
+      }
+    ],
     qualities: [
       '67rdca3eeb7f6fgeed471198',
       '67rdca3eeb7f6fgeed471102',
@@ -43,21 +64,39 @@ const partners = [
     email: 'alexeywest024@list.ru',
     telegram: 'https://t.me/WeST_024',
     github: 'https://github.com/AlexeyKharitonov',
-    hardSkills: {
-      title: 'Hard Skills:',
-      javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
-      html: { name: 'HTML:', progress: randomInt(55, 80) },
-      css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) }
-    },
-    softSkills: {
-      title: 'Soft Skills:',
-      creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
-      flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
-      discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
-      autonomy: { name: 'Самостоятельность:', progress: randomInt(60, 95) },
-      proactivity: { name: 'Проактивность:', progress: randomInt(50, 90) }
-    },
+    hardSkills: [
+      {
+        name: 'Java Script:',
+        progress: randomInt(25, 65),
+        color: 'bg-warning'
+      },
+      { name: 'HTML:', progress: randomInt(55, 80), color: 'bg-danger' },
+      { name: 'CSS:', progress: randomInt(60, 75), color: '' },
+      { name: 'Redux:', progress: randomInt(35, 55), color: 'bg-info' }
+    ],
+    softSkills: [
+      {
+        name: 'Креативность:',
+        progress: randomInt(20, 85),
+        color: 'bg-info'
+      },
+      { name: 'Гибкость:', progress: randomInt(30, 75), color: 'bg-warning' },
+      {
+        name: 'Коммуникативность:',
+        progress: randomInt(20, 90),
+        color: 'bg-primary'
+      },
+      {
+        name: 'Самостоятельность:',
+        progress: randomInt(60, 95),
+        color: 'bg-success'
+      },
+      {
+        name: 'Проактивность:',
+        progress: randomInt(50, 90),
+        color: 'bg-danger'
+      }
+    ],
     qualities: [
       '67rdca3eeb7f6fgeed471100',
       '67rdca3eeb7f6fgeed4711012',
@@ -76,21 +115,39 @@ const partners = [
     email: 'svyatpopov86@gmail.com',
     telegram: 'https://t.me/Vana_Svyat',
     github: 'https://github.com/Sviatoslove',
-    hardSkills: {
-      title: 'Hard Skills:',
-      javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
-      html: { name: 'HTML:', progress: randomInt(55, 80) },
-      css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) }
-    },
-    softSkills: {
-      title: 'Soft Skills:',
-      creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
-      flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
-      discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
-      autonomy: { name: 'Самостоятельность:', progress: randomInt(60, 95) },
-      proactivity: { name: 'Проактивность:', progress: randomInt(50, 90) }
-    },
+    hardSkills: [
+      {
+        name: 'Java Script:',
+        progress: randomInt(25, 65),
+        color: 'bg-warning'
+      },
+      { name: 'HTML:', progress: randomInt(55, 80), color: 'bg-danger' },
+      { name: 'CSS:', progress: randomInt(60, 75), color: '' },
+      { name: 'Redux:', progress: randomInt(35, 55), color: 'bg-info' }
+    ],
+    softSkills: [
+      {
+        name: 'Креативность:',
+        progress: randomInt(20, 85),
+        color: 'bg-info'
+      },
+      { name: 'Гибкость:', progress: randomInt(30, 75), color: 'bg-warning' },
+      {
+        name: 'Коммуникативность:',
+        progress: randomInt(20, 90),
+        color: 'bg-primary'
+      },
+      {
+        name: 'Самостоятельность:',
+        progress: randomInt(60, 95),
+        color: 'bg-success'
+      },
+      {
+        name: 'Проактивность:',
+        progress: randomInt(50, 90),
+        color: 'bg-danger'
+      }
+    ],
     qualities: [
       '67rdca3eeb7f6fgeed471101',
       '67rdca3eeb7f6fgeed471103',
@@ -110,21 +167,39 @@ const partners = [
     email: 'maximrogozin@icloud.com',
     telegram: 'https://t.me/Autmaxcapital',
     github: 'https://github.com/Maximrogozin',
-    hardSkills: {
-      title: 'Hard Skills:',
-      javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
-      html: { name: 'HTML:', progress: randomInt(55, 80) },
-      css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) }
-    },
-    softSkills: {
-      title: 'Soft Skills:',
-      creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
-      flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
-      discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
-      autonomy: { name: 'Самостоятельность:', progress: randomInt(60, 95) },
-      proactivity: { name: 'Проактивность:', progress: randomInt(50, 90) }
-    },
+    hardSkills: [
+      {
+        name: 'Java Script:',
+        progress: randomInt(25, 65),
+        color: 'bg-warning'
+      },
+      { name: 'HTML:', progress: randomInt(55, 80), color: 'bg-danger' },
+      { name: 'CSS:', progress: randomInt(60, 75), color: '' },
+      { name: 'Redux:', progress: randomInt(35, 55), color: 'bg-info' }
+    ],
+    softSkills: [
+      {
+        name: 'Креативность:',
+        progress: randomInt(20, 85),
+        color: 'bg-info'
+      },
+      { name: 'Гибкость:', progress: randomInt(30, 75), color: 'bg-warning' },
+      {
+        name: 'Коммуникативность:',
+        progress: randomInt(20, 90),
+        color: 'bg-primary'
+      },
+      {
+        name: 'Самостоятельность:',
+        progress: randomInt(60, 95),
+        color: 'bg-success'
+      },
+      {
+        name: 'Проактивность:',
+        progress: randomInt(50, 90),
+        color: 'bg-danger'
+      }
+    ],
     qualities: [
       '67rdca3eeb7f6fgeed471100',
       '67rdca3eeb7f6fgeed471102',
