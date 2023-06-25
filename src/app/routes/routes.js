@@ -13,7 +13,7 @@ const routes = [
   {
     name: 'Наша команда',
     to: '/ourTeam',
-    path: '/ourTeam/:id?/:name?',
+    path: '/ourTeam/:id?',
     exact: false,
     component: TeamPage
   },

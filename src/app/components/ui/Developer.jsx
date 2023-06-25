@@ -53,7 +53,7 @@ const Developer = (developer) => {
           ))}
         </div>
         <Link
-          to={`/ourTeam/${developer._id}/${developer.name}`}
+          to={`/ourTeam/${developer._id}`}
           className='btn btn-outline-warning'
           style={{ width: '100%' }}
         >
