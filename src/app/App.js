@@ -1,11 +1,3 @@
-// import React from 'react'
-// import UserPage from './userPage/userPage'
-
-// function App() {
-//   return <UserPage />
-// }
-
-// export default App
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import routes from './routes/routes'

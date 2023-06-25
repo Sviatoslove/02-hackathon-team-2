@@ -8,7 +8,7 @@ const OurTeam = () => {
   return (
     <div className='container text-center'>
       <h1>Наша команда:</h1>
-      <div className='d-flex flex-row mb-3 text-center'>
+      <div className='row mb-3 text-center'>
         {partners.map((p) => (
           <Developer {...p} key={p._id} />
         ))}

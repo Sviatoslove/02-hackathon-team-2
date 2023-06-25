@@ -37,13 +37,12 @@ const Developer = (developer) => {
           background: `url(${image})no-repeat center center / cover`,
           borderRadius: '50px'
         }}
-      >
+      ></div>
+      <div className='card-body mt-1 pt-1 rounded m-5  p-5'>
         <Favorites
           status={getClassName()}
           updateFavorites={() => updateFavorites(id)}
         />
-      </div>
-      <div className='card-body mt-3 rounded m-5 p-5'>
         <h5 className='card-title'>{name}</h5>
         <p className='card-text'>
           Возраст: {declensionWord(age, '', 'лет', 'год', 'года')}
