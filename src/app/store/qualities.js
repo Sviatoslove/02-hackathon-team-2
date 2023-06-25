@@ -6,7 +6,7 @@ const qualitiesSlice = createSlice({
   initialState: {
     entitties: null,
     error: null,
-    isLoadng: false
+    isLoadng: true
   },
   reducers: {
     qualitiesRequested: (state) => {
@@ -38,21 +38,24 @@ export const loadQualitiesList = () => async (dispatch) => {
   }
 }
 
-export const selectQualitiesList = () => (state) => state.qualities.entitties
 export const selectQualitiesLoadingStatus = () => (state) =>
   state.qualities.isLoadng
+
 export const selectQualitiesByIds = (qualitiesIds) =>
-  createSelector(selectQualitiesList, (qualities) => {
-    const res = []
-    for (const qualId of qualitiesIds) {
-      for (const qual of qualities) {
-        if (qualId === qual._id) {
-          res.push(qual)
-          break
+  createSelector(
+    (state) => state.qualities.entitties,
+    (qualities) => {
+      const res = []
+      for (const qualId of qualitiesIds) {
+        for (const qual of qualities) {
+          if (qualId === qual._id) {
+            res.push(qual)
+            break
+          }
         }
       }
+      return res
     }
-    return res
-  })
+  )
 
 export default qualitiesReducer

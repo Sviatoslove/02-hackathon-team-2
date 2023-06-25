@@ -66,6 +66,39 @@ const partners = [
     favorites: false
   },
   {
+    _id: '67rdca3eeb7f6fgeed471818',
+    name: 'Максим Рогозин',
+    age: 30,
+    projectJob: 'Page: PartnerPage, Components: PartnerCard and Progress',
+    image:
+      'https://artwall.kz/image/catalog/cat-images/detskie/ninja-turtles/tmnt-art-nl.jpg',
+    email: 'maximrogozin@icloud.com',
+    telegram: 'https://t.me/Autmaxcapital',
+    github: 'https://github.com/Maximrogozin',
+    hardSkills: {
+      title: 'Hard Skills:',
+      javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
+      html: { name: 'HTML:', progress: randomInt(55, 80) },
+      css: { name: 'CSS:', progress: randomInt(60, 75) },
+      redux: { name: 'Redux:', progress: randomInt(35, 55) }
+    },
+    softSkills: {
+      title: 'Soft Skills:',
+      creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
+      flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
+      discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
+      autonomy: { name: 'Самостоятельность:', progress: randomInt(60, 95) },
+      proactivity: { name: 'Проактивность:', progress: randomInt(50, 90) }
+    },
+    qualities: [
+      '67rdca3eeb7f6fgeed471100',
+      '67rdca3eeb7f6fgeed471102',
+      '67rdca3eeb7f6fgeed471105'
+    ],
+    about_me: '',
+    favorites: false
+  },
+  {
     _id: '67rdca3eeb7f6fgeed471817',
     name: 'Святослав Попов',
     age: 37,
@@ -97,39 +130,6 @@ const partners = [
     ],
     about_me:
       'Рад работать в коллективе с такими прекрасными качествами. Уверен, что нам любая задача по плечу. Хочется больше новых и интересных проектов. Готов прилагать необходимые усилия для того, чтобы всё работало))). Треньки и обед по распорядку)',
-    favorites: false
-  },
-  {
-    _id: '67rdca3eeb7f6fgeed471818',
-    name: 'Максим Рогозин',
-    age: 30,
-    projectJob: 'Page: PartnerPage, Components: PartnerCard and Progress',
-    image:
-      'https://artwall.kz/image/catalog/cat-images/detskie/ninja-turtles/tmnt-art-nl.jpg',
-    email: 'maximrogozin@icloud.com',
-    telegram: 'https://t.me/Autmaxcapital',
-    github: 'https://github.com/Maximrogozin',
-    hardSkills: {
-      title: 'Hard Skills:',
-      javaScript: { name: 'Java Script:', progress: randomInt(25, 65) },
-      html: { name: 'HTML:', progress: randomInt(55, 80) },
-      css: { name: 'CSS:', progress: randomInt(60, 75) },
-      redux: { name: 'Redux:', progress: randomInt(35, 55) }
-    },
-    softSkills: {
-      title: 'Soft Skills:',
-      creativity: { name: 'Креативность:', progress: randomInt(20, 85) },
-      flexibility: { name: 'Гибкость:', progress: randomInt(30, 75) },
-      discipline: { name: 'Коммуникативность:', progress: randomInt(20, 90) },
-      autonomy: { name: 'Самостоятельность:', progress: randomInt(60, 95) },
-      proactivity: { name: 'Проактивность:', progress: randomInt(50, 90) }
-    },
-    qualities: [
-      '67rdca3eeb7f6fgeed471100',
-      '67rdca3eeb7f6fgeed471102',
-      '67rdca3eeb7f6fgeed471105'
-    ],
-    about_me: '',
     favorites: false
   }
 ]

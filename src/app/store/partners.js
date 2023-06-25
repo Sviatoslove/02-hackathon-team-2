@@ -6,7 +6,7 @@ const partnersSlice = createSlice({
   initialState: {
     entities: null,
     error: null,
-    isLoading: false
+    isLoading: true
   },
   reducers: {
     partnersRequested: (state) => {
@@ -19,12 +19,26 @@ const partnersSlice = createSlice({
     partnersRequestedFailed: (state, action) => {
       state.error = action.payload
       state.isLoading = false
+    },
+    updateFavorites: (state, action) => {
+      const elIdx = state.entities.findIndex(
+        (el) => el._id === action.payload.id
+      )
+      state.entities[elIdx] = {
+        ...state.entities[elIdx],
+        favorites: !state.entities[elIdx].favorites
+      }
     }
   }
 })
 
 const { actions, reducer: partnersReducer } = partnersSlice
-const { partnersRequested, partnersReceved, partnersRequestedFailed } = actions
+const {
+  partnersRequested,
+  partnersReceved,
+  partnersRequestedFailed,
+  updateFavorites
+} = actions
 
 export const loadPartnersList = () => async (dispatch) => {
   dispatch(partnersRequested())
@@ -35,6 +49,10 @@ export const loadPartnersList = () => async (dispatch) => {
   } catch (error) {
     dispatch(partnersRequestedFailed(error.message))
   }
+}
+
+export const favoritesAddAndDelete = (id) => (dispatch) => {
+  dispatch(updateFavorites({ id }))
 }
 
 export const selectPartnersList = () => (state) => state.partners.entities

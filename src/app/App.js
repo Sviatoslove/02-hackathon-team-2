@@ -17,7 +17,6 @@ const expandRoutes = (routes) =>
 function App() {
   return (
     <AppLoader>
-      <h1>02-Hackathon-Team-2</h1>
       <NavBar />
       <Switch>
         {expandRoutes(routes)}

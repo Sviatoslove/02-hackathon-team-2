@@ -1,51 +1,43 @@
-
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { nanoid } from 'nanoid'
-import Badge from '../components/Common/Badge'
-import Developer from '../components/Developer'
-import styles from './Developer.module.css'
+import { useSelector } from 'react-redux'
+import { selectGreetingsList } from '../store/greetings '
+import { selectPartnersList } from '../store/partners'
+import Developer from '../components/ui/Developer'
+import CardGreetings from '../components/common/CardGreetings'
 
-const content = `Представляем вашему вниманию команду
-frontend-разработчиков из 83-ей группы: Святослава, 
-Максима, Алексея и Александра!`
+const Main = () => {
+  const greetingsList = useSelector(selectGreetingsList())
+  const ourTeamData = greetingsList.find((el) => el.name === 'ourTeamData')
+  const partnersList = useSelector(selectPartnersList())
 
-// временно!!
-const developers = [
-  { _id: nanoid(), name: 'Алексей', age: 28 },
-  { _id: nanoid(), name: 'Святослав', age: 'age' },
-  { _id: nanoid(), name: 'Максим', age: 30 },
-  { _id: nanoid(), name: 'Александр', age: 22 }
-]
-
-const MainPage = () => {
   return (
-    <>
-      <nav
-        className='navbar navbar-dark'
-        style={{ backgroundColor: '#0155AB' }}
-      >
-        <Link className='navbar-brand mx-4' to='/'>
-          Team of developers
-        </Link>
-      </nav>
-      <div className='container mt-4'>
-        {/* <div className='row'> */}
-        <div className='d-flex align-items-center flex-column'>
-          <h2>Наша команда разработчиков</h2>
-          <h3 className='mt-4 opacity-50'>
-            <Badge color={'warning'} content={content} />
-          </h3>
+    <div className='container tex-center'>
+      <div className='shadow mt-5 rounded'>
+        <h2 className='text-center'>
+          Команда разработчиков: {ourTeamData.comandName}
+        </h2>
+        <h4 className='text-center'>
+          {ourTeamData.title}: {ourTeamData.content}
+        </h4>
+      </div>
+      <div className='container mt-4 p-0'>
+        <div className='d-flex flex-row mb-3'>
+          {greetingsList.map((card, idx) => {
+            if (card.name === 'ourTeamData') return null
+            return <CardGreetings {...card} key={idx} />
+          })}
         </div>
-        <div className={styles.gridContainer}>
-          {developers.map((developer) => (
-            <Developer key={developer._id} {...developer} />
-          ))}
-          {/* </div> */}
+        <div className=''>
+          <h2 className='text-center'>Наши разработчики</h2>
+          <div className='d-flex flex-row mb-3 text-center'>
+            {partnersList.map((developer) => (
+              <Developer key={developer._id} {...developer} />
+            ))}
+          </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
-export default MainPage
+export default Main
