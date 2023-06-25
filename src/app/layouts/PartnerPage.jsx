@@ -10,7 +10,7 @@ const PartnerPage = () => {
   const { id } = useParams()
   const partner = useSelector(selectPartnerById(id))
   return (
-    <div className='container'>
+    <div className='container mt-3'>
       <div className='row gutters-sm '>
         <div className='col-md-6 mb-3'>
           <UserCard data={partner} />
