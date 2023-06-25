@@ -27,12 +27,11 @@ const Main = () => {
         })}
       </div>
       <h2 className='text-center'>Наши разработчики</h2>
-      <div className='row mb-3 text-center mt-4'>
+      <div className='row mb-3 text-center mt-5 '>
         {partnersList.map((developer) => (
           <Developer key={developer._id} {...developer} />
         ))}
       </div>
-      {/* </div> */}
     </div>
   )
 }

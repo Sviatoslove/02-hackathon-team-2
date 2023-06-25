@@ -7,7 +7,9 @@ const Favorites = ({ status, updateFavorites }) => {
     <Button
       name={
         <i
-          className={'position-absolute text-light fs-1 bi bi-star' + status}
+          className={
+            'position-absolute text-light fs-1 bi bi-star m-2' + status
+          }
           style={{ top: '2%', right: '14%' }}
         ></i>
       }

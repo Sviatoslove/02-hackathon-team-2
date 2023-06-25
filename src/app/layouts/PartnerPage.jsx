@@ -1,7 +1,8 @@
 import React from 'react'
+import OurTeam from './OurTeam'
 
 const PartnerPage = () => {
-  return <h1>PartnerPage</h1>
+  return <OurTeam />
 }
 
 export default PartnerPage

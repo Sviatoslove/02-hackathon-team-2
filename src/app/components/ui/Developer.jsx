@@ -26,14 +26,14 @@ const Developer = (developer) => {
 
   return (
     <div
-      className='card col-md text-center'
+      className='card col-md-6 text-center'
       style={{ width: 'content', border: 'none' }}
     >
       <div
         className='card-img-top m-auto shadow'
         style={{
-          width: '200px',
-          height: '300px',
+          width: '300px',
+          height: '400px',
           background: `url(${image})no-repeat center center / cover`,
           borderRadius: '50px'
         }}
@@ -43,7 +43,7 @@ const Developer = (developer) => {
           updateFavorites={() => updateFavorites(id)}
         />
       </div>
-      <div className='card-body shadow mt-3 rounded'>
+      <div className='card-body mt-3 rounded m-5 p-5'>
         <h5 className='card-title'>{name}</h5>
         <p className='card-text'>
           Возраст: {declensionWord(age, '', 'лет', 'год', 'года')}
