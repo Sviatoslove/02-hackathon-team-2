@@ -21,7 +21,6 @@ const UserProvider = ({ children }) => {
       loggedIn: loggedIn
     }))
   }
-  console.log(user)
 
   return (
     <UserContext.Provider value={{ user, updateUser }}>

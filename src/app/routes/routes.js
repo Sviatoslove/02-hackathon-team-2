@@ -1,11 +1,12 @@
 import FavoritesPage from '../layouts/FavoritesPage'
 import MainPage from '../layouts/MainPage'
 import TeamPage from '../layouts/TeamPage'
-import Login from '../layouts/login'
+import Login from '../layouts/Login'
 
 const routes = [
   {
     name: 'Главная страница',
+    display: true,
     to: '/',
     path: '/',
     exact: true,
@@ -13,6 +14,7 @@ const routes = [
   },
   {
     name: 'Наша команда',
+    display: true,
     to: '/ourTeam',
     path: '/ourTeam/:id?',
     exact: false,
@@ -20,6 +22,7 @@ const routes = [
   },
   {
     name: 'Избранные',
+    display: true,
     to: '/favorites',
     path: '/favorites',
     exact: false,
@@ -27,6 +30,7 @@ const routes = [
   },
   {
     name: 'Вход',
+    display: false,
     to: '/login',
     path: '/login',
     exact: false,

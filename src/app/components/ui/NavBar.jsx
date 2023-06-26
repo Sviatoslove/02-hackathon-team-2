@@ -1,22 +1,31 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import routes from '../../routes/routes'
 import { useUser } from '../../hooks/UserProvider'
-// import LOGO from '../../../assets/logo.png'
 
 const expandMenu = (routes) => {
-  return routes.map((item, idx) => (
-    <li className='nav-item' key={idx}>
-      <NavLink className='nav-link text-light' to={item.to}>
-        {item.name}
-      </NavLink>
-    </li>
-  ))
+  return routes.map((item, idx) => {
+    if (item.display) {
+      return (
+        <li className='nav-item' key={idx}>
+          <NavLink className='nav-link text-light' to={item.to}>
+            {item.name}
+          </NavLink>
+        </li>
+      )
+    }
+    return null
+  })
 }
 
 const NavBar = () => {
-  const { user } = useUser()
-  console.log(user)
+  const history = useHistory()
+  const { user, updateUser } = useUser()
+
+  const handleClick = () => {
+    updateUser(false)
+    history.push('/')
+  }
 
   return (
     <nav className='navbar bg-primary' data-bs-theme='dark'>
@@ -28,9 +37,18 @@ const NavBar = () => {
           />
         </NavLink>
         <ul className='nav'>{expandMenu(routes)}</ul>
-        <div>
-          {user.loggedIn && <img src={user.avatar} alt='avatar' />}
-          {!user.loggedIn && (
+
+        <div className='d-flex'>
+          {user.loggedIn ? (
+            <>
+              <div>
+                <img src={user.avatar} alt='avatar' style={{ width: '40px' }} />
+              </div>
+              <button className='nav-link p-2 text-light' onClick={handleClick}>
+                Logout
+              </button>
+            </>
+          ) : (
             <NavLink className='nav-link p-2 text-light' to='/login'>
               Login
             </NavLink>

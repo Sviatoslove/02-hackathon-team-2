@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import routes from './routes/routes'
-import NavBar from './components/UI/NavBar'
-import AppLoader from './components/UI/hoc/AppLoader'
-import Footer from './components/UI/Footer'
+import NavBar from './components/ui/NavBar'
+import Footer from './components/ui/Footer'
+import AppLoader from './components/ui/hoc/AppLoader'
 import { UserProvider } from './hooks/UserProvider'
 
 const expandRoutes = (routes) =>

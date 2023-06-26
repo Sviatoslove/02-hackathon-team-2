@@ -2,14 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectGreetingsList } from '../store/greetings '
 import { selectPartnersList } from '../store/partners'
-import Developer from '../components/UI/Developer'
+import Developer from '../components/ui/Developer'
 import CardGreetings from '../components/Common/CardGreetings'
+import Slider from '../components/Common/Slider'
 
 const Main = () => {
   const greetingsList = useSelector(selectGreetingsList())
   const ourTeamData = greetingsList.find((el) => el.name === 'ourTeamData')
   const partnersList = useSelector(selectPartnersList())
-
   return (
     <div className='container text-center'>
       <div className='shadow mt-5 rounded p-3'>
@@ -27,11 +27,12 @@ const Main = () => {
         })}
       </div>
       <h2 className='text-center'>Наши разработчики</h2>
-      <div className='row mb-3 text-center mt-5 '>
+      <div className='row text-center mt-5 '>
         {partnersList.map((developer) => (
           <Developer key={developer._id} {...developer} />
         ))}
       </div>
+      <Slider />
     </div>
   )
 }

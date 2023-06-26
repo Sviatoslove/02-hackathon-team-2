@@ -4,7 +4,7 @@ import qualitiesService from '../services/qualities.service'
 const qualitiesSlice = createSlice({
   name: 'qualities',
   initialState: {
-    entitties: null,
+    entities: null,
     error: null,
     isLoadng: true
   },
@@ -13,7 +13,7 @@ const qualitiesSlice = createSlice({
       state.isLoadng = true
     },
     qualitiesReceved: (state, action) => {
-      state.entitties = action.payload
+      state.entities = action.payload
       state.isLoadng = false
     },
     qualitiesRequestedFailed: (state, action) => {
@@ -43,7 +43,7 @@ export const selectQualitiesLoadingStatus = () => (state) =>
 
 export const selectQualitiesByIds = (qualitiesIds) =>
   createSelector(
-    (state) => state.qualities.entitties,
+    (state) => state.qualities.entities,
     (qualities) => {
       const res = []
       for (const qualId of qualitiesIds) {

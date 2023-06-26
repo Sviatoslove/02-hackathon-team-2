@@ -25,8 +25,6 @@ const LoginForm = () => {
     }))
   }
 
-  console.log(data)
-
   const validatorConfig = {
     email: {
       isRequared: {

@@ -15,14 +15,14 @@ const Badge = ({ color, content: name, textColor, circle }) => {
 }
 
 Badge.defaultProps = {
-  circle: false
+  circle: ''
 }
 
 Badge.propTypes = {
   color: PropTypes.string,
   textColor: PropTypes.string,
   content: PropTypes.string,
-  circle: PropTypes.bool
+  circle: PropTypes.string
 }
 
 export default Badge

@@ -1,13 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Badges from './badge'
-import { getAgeString } from './utils/getAgeString'
-import { favoritesAddAndDelete } from './store/partners'
-import { useDispatch } from 'react-redux'
-import Favorites from './components/Common/Favorites'
+import { favoritesAddAndDelete } from '../../store/partners'
+import { useDispatch, useSelector } from 'react-redux'
+import Favorites from '../Common/Favorites'
+import { declensionWord } from '../../utils/declensionWord'
+import Badge from '../Common/Badge'
+import { selectQualitiesByIds } from '../../store/qualities'
 
 const UserCard = ({ data }) => {
   const dispatch = useDispatch()
+
+  const qualities = useSelector(selectQualitiesByIds(data.qualities))
+
   const getClassName = () => (data.favorites ? '-fill' : '')
   const updateFavorites = (id) => {
     dispatch(favoritesAddAndDelete(id))
@@ -28,9 +32,11 @@ const UserCard = ({ data }) => {
           <div className='mt-3'>
             <h4>{data.name}</h4>
             <p className='text-secondary mb-1'>
-              Возраст: {getAgeString(data.age)}
+              Возраст: {declensionWord(data.age, '', 'лет', 'год', 'года')}
             </p>
-            <Badges data={data} />
+            {qualities.map((q) => (
+              <Badge key={q._id} {...q} circle={'rounded'} />
+            ))}
             <div className='p-2'>
               <a href={data.github} className='remove-link-outline'>
                 <i

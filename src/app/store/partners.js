@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSelector, createSlice } from '@reduxjs/toolkit'
 import partnersService from '../services/partners.service'
 import localStorageService from '../services/localStorage.service'
 
@@ -81,7 +81,11 @@ export const favoritesAddAndDelete = (id) => (dispatch) => {
 export const selectPartnersList = () => (state) => state.partners.entities
 export const selectPartnersLoadingStatus = () => (state) =>
   state.partners.isLoading
-export const selectPartnerById = (id) => (state) =>
-  state.partners.entities.find((p) => p._id === id)
+
+export const selectPartnerById = (id) =>
+  createSelector(
+    (state) => state.partners.entities,
+    (state) => state.find((p) => p._id === id)
+  )
 
 export default partnersReducer

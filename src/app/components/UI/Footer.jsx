@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer
-      className=' text-dark opacity-50 position-absolute bottom-0 w-100'
+      className=' text-dark opacity-50 bottom-0 w-100'
       style={{ backgroundColor: '#C4C4C4' }}
     >
       <div className='text-center flex-column container-md d-flex justify-content-between align-items-center p-4 mx-auto'>
